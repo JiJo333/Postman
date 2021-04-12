@@ -1,2 +1,2 @@
 # Postman
-The folder contains some test files
+The folder contains some tests for Terraform Cloud APO
