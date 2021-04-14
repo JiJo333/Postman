@@ -7,7 +7,8 @@ const response = pm.response.json();
 //console.log(response);
 //const workspaceName = response.data.filter((ws) => ws.attributes.name === "Sentinel");
 const workspaceName = response.data.filter((ws) => ws.attributes.name.match(/Prac/ig))
-console.log(workspaceName[1]);
+console.log(workspaceName);
+console.log(workspaceName.length);
 //console.log(response.data[1].id)
 
 pm.test("Type is workspaces",() => {
