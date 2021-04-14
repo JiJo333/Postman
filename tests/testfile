@@ -4,14 +4,16 @@ pm.test("Status code is 200", function () {
 
 const response = pm.response.json();
 //const workspaceName = response.filter((ws) => ws.data.attributes.name === "Practice");
-console.log(response);
-//console.log(workspaceName[0]);
+//console.log(response);
+//const workspaceName = response.data.filter((ws) => ws.attributes.name === "Sentinel");
+const workspaceName = response.data.filter((ws) => ws.attributes.name.match(/Prac/ig))
+console.log(workspaceName[1]);
 //console.log(response.data[1].id)
 
 pm.test("Type is workspaces",() => {
     pm.expect(response.data[0].type).to.eql('workspaces')
 })
 
-pm.test("Workspace name is Azure", () => {
-    pm.expect(response.data[0].attributes.name).to.eql('Practice')
-})
+//pm.test("Workspace name is Azure", () => {
+//    pm.expect(response.data[0].attributes.name).to.eql('Practice')
+//})
